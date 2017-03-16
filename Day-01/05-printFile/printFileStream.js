@@ -13,16 +13,24 @@ var stream = fs.createReadStream('test.txt', {encoding : 'utf8'});
 	console.log('-------------------- file end ------------------');
 });*/
 
+var readCount = 0;
 stream.on('open', function(){
 	console.log('-------------------- file begin ------------------');
 });
 stream.on('data', function(chunk){
+	++readCount;
 	console.log(chunk);	
 });
 stream.on('end', function(){
 	console.log('-------------------- file end ------------------');
+	console.log('readCount = ', readCount);
 });
 stream.on('error', function(err){
 	console.log('something went wrong ', err);
 });
+
+//stream.pipe(process.stdout);
+
+
+
 
