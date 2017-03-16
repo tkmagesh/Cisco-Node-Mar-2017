@@ -50,3 +50,11 @@ var server = http.createServer(function(req, res){
 	}
 });
 server.listen(8080);
+
+/*
+serveStatic.js
+dataParser.js
+calculatorHandler.js
+notFoundHandler.js
+
+*/
