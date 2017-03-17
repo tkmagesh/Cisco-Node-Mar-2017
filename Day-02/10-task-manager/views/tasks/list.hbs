@@ -1,0 +1,15 @@
+<h1>Task Manager</h1>
+<hr>
+<ol>
+	{{#each tasks}}
+	<li>
+		{{#if this.isCompleted}}
+			<span class="completed">{{this.name}}</span>
+		{{else}}
+			<span>{{this.name}}</span>
+		{{/if}}
+		<a href="/tasks/toggle/{{this.id}}">X</a>
+	</li>
+	{{/each}}
+</ol>
+<a href="/tasks/new">Create New</a>
